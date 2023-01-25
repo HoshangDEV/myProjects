@@ -7,6 +7,9 @@
 
 body {
     background: #E9E3FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .con {
