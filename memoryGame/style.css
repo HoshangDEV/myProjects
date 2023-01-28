@@ -1,8 +1,13 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('/fonts/Rabar_021.ttf') format('truetype');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: MyFont;
     user-select: none;
 }
 
