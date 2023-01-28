@@ -3,7 +3,7 @@ const con = document.getElementById('con')
 const h2 = document.querySelector('h2')
 const startBtn = document.getElementById('startBtn')
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const randomNumbers = [];
+let randomNumbers = [];
 
 h2.innerHTML = "😉 دەست بکە بەیاری"
 
@@ -12,11 +12,7 @@ function start() {
     h2.innerHTML = "😉 دەست بکە بەیاری"
 
     //generate random number
-    while (numbers.length > 0) {
-        const randomIndex = Math.floor(Math.random() * numbers.length);
-        const randomNumber = numbers.splice(randomIndex, 1)[0];
-        randomNumbers.push(randomNumber);
-    }
+    randomNumbers = generateRandomArray()
 
     //apply value to boxs
     let tempBtn = ""
@@ -36,22 +32,18 @@ function start() {
     }, 2000);
 }
 
-//start the game when page loaded
-// window.onload = function () {
-//     start()
-// }
-
 
 //show with click
 let temp = 1
 let timeOfLose = 0
 
 function btnPress(n) {
+    let tempBtn = document.getElementById(`btn${n}`)
     let tempH = document.getElementById(`h${n}`)
     tempH.style.visibility = 'visible'
     if (temp === n) {
         if (temp === 9) {
-            h2.innerHTML = '🙂 نانا لێێ دەزانی'
+            h2.innerHTML = '🎉😍 نانا لێێ دەزانی'
         } else if (temp > 6 && temp <= 8) {
             h2.innerHTML = '😁 بدۆڕێی دەعوەتم'
         } else if (temp > 3 && temp <= 6) {
@@ -60,7 +52,10 @@ function btnPress(n) {
             h2.innerHTML = '😃 ئاگام لێتە شێرەکەم'
         }
         temp += 1
+    } else if (n < temp) {
+
     } else {
+        tempBtn.style.background = 'red'
         if (timeOfLose === 0) {
             h2.innerHTML = '😂 ئەک داوەشێی'
         } else if (timeOfLose === 1) {
@@ -92,4 +87,17 @@ function disableBtn(isTrue) {
             tempBtn.disabled = false
         }
     }
+}
+
+//gen random num
+function generateRandomArray() {
+    var randomArray = []
+    var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    while (nums.length > 0) {
+        var randomIndex = Math.floor(Math.random() * nums.length);
+        var randomNum = nums[randomIndex];
+        randomArray.push(randomNum);
+        nums.splice(randomIndex, 1);
+    }
+    return randomArray;
 }
