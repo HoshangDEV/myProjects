@@ -71,7 +71,7 @@ function btnPress(n) {
         disableBtn(true)
         temp = 1
         timeOfLose += 1
-        if(timeOfLose===2){
+        if(timeOfLose===3){
             timeOfLose=0
         }
     }
