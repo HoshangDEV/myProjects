@@ -44,6 +44,7 @@ function btnPress(n) {
     if (temp === n) {
         if (temp === 9) {
             h2.innerHTML = '🎉😍 نانا لێێ دەزانی'
+            temp=1
         } else if (temp > 6 && temp <= 8) {
             h2.innerHTML = '😁 بدۆڕێی دەعوەتم'
         } else if (temp > 3 && temp <= 6) {
