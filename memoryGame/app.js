@@ -2,7 +2,6 @@ const btn = document.querySelector('button')
 const con = document.getElementById('con')
 const h2 = document.querySelector('h2')
 const startBtn = document.getElementById('startBtn')
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let randomNumbers = [];
 
 h2.innerHTML = "😉 دەست بکە بەیاری"
