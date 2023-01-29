@@ -12,6 +12,7 @@ let checkArray = [
     [1, 5, 9],
     [3, 5, 7]
 ]
+let tillDraw=0
 const startBtn = document.getElementById('startBtn')
 startBtn.addEventListener('click', function () {
     resetBtn()
@@ -21,6 +22,7 @@ let h2 = document.querySelector('h2')
 h2.innerHTML = "Let's play 😃"
 
 function clickBtn(n) {
+    tillDraw+=1
     h2.innerHTML = "Let's play 😃"
 
     let tempBtn = document.getElementById(`btn${n}`)
@@ -60,6 +62,8 @@ function clickBtn(n) {
     } else if (resultx) {
         disableAllBtn()
         h2.innerHTML = 'User ❌ Won 😎'
+    }else if(tillDraw===9){
+        h2.innerHTML = 'Draw 😒😒'
     }
 }
 
@@ -93,7 +97,7 @@ function resetBtn() {
     turn = 0
     tempScore = 0
     h2.innerHTML = "Let's play 😃"
-
+    tillDraw=0
 }
 
 function checkXOArray(checkArray, xarray) {
