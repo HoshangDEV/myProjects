@@ -48,19 +48,11 @@ function clickBtn(n) {
         tempBtn.innerHTML = '<i class="fa-solid fa-o"></i>'
     }
 
-    //sort the array
-    xarray.sort(function (a, b) {
-        return a - b;
-    });
-    oarray.sort(function (a, b) {
-        return a - b;
-    });
-
     //check
     console.log(xarray)
     console.log(oarray)
-    let resultx = check(checkArray, xarray)
-    let resulto = check(checkArray, oarray)
+    let resultx = checkXOArray(checkArray, xarray)
+    let resulto = checkXOArray(checkArray, oarray)
 
     if (resulto) {
         disableAllBtn()
@@ -69,17 +61,6 @@ function clickBtn(n) {
         disableAllBtn()
         h2.innerHTML = 'User ❌ Won 😎'
     }
-}
-
-
-//check if 1d array exist in 2d array
-function check(arr, arr2) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i].toString() === arr2.toString()) {
-            return true;
-        }
-    }
-    return false;
 }
 
 
@@ -113,4 +94,20 @@ function resetBtn() {
     tempScore = 0
     h2.innerHTML = "Let's play 😃"
 
+}
+
+function checkXOArray(checkArray, xarray) {
+    for (let i = 0; i < checkArray.length; i++) {
+        let row = checkArray[i];
+        let count = 0;
+        for (let j = 0; j < xarray.length; j++) {
+            if (row.includes(xarray[j])) {
+                count++;
+            }
+        }
+        if (count >= 3) {
+            // console.log("At least three values of xarray exist in the following row of checkArray:", row);
+            return true
+        }
+    }
 }
