@@ -30,10 +30,13 @@ function clickBtn(n) {
     xarray.push(n)
     userWin = checkXOArray(checkArray, xarray)
     tillDraw += 1
+    startBtn.disabled = true
 
     if (userWin) {
-        h2.innerHTML = 'You Won'
+        h2.innerHTML = 'You Won 🙂'
         disableAllBtn()
+        startBtn.disabled = false
+
     } else if (tillDraw != 9) {
         setTimeout(function () {
             pushNumber(oarray, xarray)
@@ -41,15 +44,21 @@ function clickBtn(n) {
             let botBtn = document.getElementById(`btn${lastValue}`)
             botBtn.innerHTML = '<i class="fa-solid fa-o"></i>'
             botBtn.disabled = true
+            startBtn.disabled = false
+
             botWin = checkXOArray(checkArray, oarray)
             if (botWin) {
-                h2.innerHTML = 'Bot Won'
+                h2.innerHTML = 'Bot Won 😂'
                 disableAllBtn()
+                startBtn.disabled = false
+
             }
             tillDraw += 1
         }, 500);
     } else if (!userWin && !botWin && tillDraw == 9) {
-        h2.innerHTML = 'draw'
+        h2.innerHTML = 'Draw 😒😒'
+        startBtn.disabled = false
+
     }
 }
 
