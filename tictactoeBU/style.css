@@ -37,7 +37,7 @@ h2{
 
 button {
     padding: .5rem 1rem;
-    background: green;
+    background:chocolate ;
     color: #fff;
     border: none;
     border-radius: .2vmax;
@@ -48,7 +48,7 @@ button {
     transition: ease-in-out background .1s;
 }
 button:hover{
-    background-color: rgb(27, 181, 27);
+    background: rgb(134, 64, 13);
 }
 
 #startBtn{

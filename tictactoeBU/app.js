@@ -4,6 +4,7 @@ let lastValue = 0
 let tillDraw = 0
 let xarray = []
 let oarray = []
+let winLine = []
 let checkArray = [
     [1, 2, 3],
     [4, 5, 6],
@@ -34,6 +35,7 @@ function clickBtn(n) {
 
     if (userWin) {
         h2.innerHTML = 'You Won 🙂'
+        makeBtnGreen(checkArray, xarray)
         disableAllBtn()
         startBtn.disabled = false
 
@@ -49,6 +51,7 @@ function clickBtn(n) {
             botWin = checkXOArray(checkArray, oarray)
             if (botWin) {
                 h2.innerHTML = 'Bot Won 😂'
+                makeBtnGreen(checkArray, oarray)
                 disableAllBtn()
                 startBtn.disabled = false
 
@@ -83,6 +86,7 @@ function resetBtn() {
     for (let i = 1; i < 10; i++) {
         let tempDb = document.getElementById(`btn${i}`)
         tempDb.innerHTML = ''
+        tempDb.style.background = 'chocolate'
     }
     enableAllBtn()
     xarray = []
@@ -116,4 +120,30 @@ function pushNumber(arr1, arr2) {
     }
     arr1.push(num);
     return arr1;
+}
+
+
+//detect which row of checkArray matchs x or o array
+function findMatchingElements(checkArray, xarray) {
+    for (let i = 0; i < checkArray.length; i++) {
+        let matchCount = 0;
+        for (let j = 0; j < checkArray[i].length; j++) {
+            if (xarray.includes(checkArray[i][j])) {
+                matchCount++;
+            }
+        }
+        if (matchCount >= 3) {
+            return checkArray[i];
+        }
+    }
+    return [];
+}
+
+//make btn green
+function makeBtnGreen(checkArray, xarray) {
+    for (let i = 0; i < 3; i++) {
+        let num = findMatchingElements(checkArray, xarray)[i]
+        let tempbtn = document.getElementById(`btn${num}`)
+        tempbtn.style.background = 'green'
+    }
 }
