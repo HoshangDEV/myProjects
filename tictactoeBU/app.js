@@ -27,6 +27,7 @@ h2.innerHTML = "Let's play 😃"
 function clickBtn(n) {
     let userBtn = document.getElementById(`btn${n}`)
     userBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    userBtn.style.background='#5D3891'
     userBtn.disabled = true
     xarray.push(n)
     userWin = checkXOArray(checkArray, xarray)
@@ -45,6 +46,7 @@ function clickBtn(n) {
             lastValue = oarray[oarray.length - 1]
             let botBtn = document.getElementById(`btn${lastValue}`)
             botBtn.innerHTML = '<i class="fa-solid fa-o"></i>'
+            botBtn.style.background='#820000'
             botBtn.disabled = true
             startBtn.disabled = false
 
@@ -86,7 +88,7 @@ function resetBtn() {
     for (let i = 1; i < 10; i++) {
         let tempDb = document.getElementById(`btn${i}`)
         tempDb.innerHTML = ''
-        tempDb.style.background = 'chocolate'
+        tempDb.style.background = '#F99417'
     }
     enableAllBtn()
     xarray = []
