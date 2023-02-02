@@ -6,11 +6,11 @@ downloadBtn.addEventListener('click', function () {
   }).then(function (canvas) {
     var link = document.createElement('a');
     link.download = 'image.jpg';
-    link.href = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
+    link.href = canvas.toDataURL('image/jpeg', 1).replace('image/jpeg', 'image/octet-stream');
     link.click();
   });
-});
 
+});
 
 ///
 
