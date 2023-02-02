@@ -9,7 +9,6 @@ downloadBtn.addEventListener('click', function () {
     link.href = canvas.toDataURL('image/jpeg', 1).replace('image/jpeg', 'image/octet-stream');
     link.click();
   });
-
 });
 
 ///
