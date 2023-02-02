@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://kit.fontawesome.com/bb4a55a437.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="title">Create Youtube Template in Seconds</h1>
+
+        <!-- wenaw buttonakan -->
+        <div class="thum-btn">
+            <!-- //thumbnailaka -->
+            <div class="thum">
+                <img src="images/thum-image.jpg" alt="upload image" id="big-image">
+                <input type="text" class="video-title" value="The video title">
+                <div class="text">
+                    <div class="left">
+                        <img src="images/logo.png" id="channel-logo">
+                        <span class="nameandsub">
+                            <input type="text" class="channel-name" value="Channel name">
+                            <input type="text" class="channel-sub" value="345k Subscribers">
+                        </span>
+                        <span class="sub-area">
+                            <i class="fa-solid fa-bell"></i>
+                            <h2>Subscribed</h2>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                    </div>
+                    <div class="right">
+                        <span class="like-area">
+                            <img src="icons/like.png" alt="like">
+                            <input type="text" value="2k">
+                            <hr>
+                            <img src="icons/dislike.png" alt="dislike">
+                        </span>
+                        <span class="share-area">
+                            <img src="icons/share.png" alt="share">
+                            <p>Share</p>
+                        </span>
+                        <span class="clip-area">
+                            <img src="icons/clip.png" alt="clip">
+                            <p>Clip</p>
+                        </span>
+                        <span class="save-area">
+                            <img src="icons/save.png" alt="save">
+                            <p>Save</p>
+                        </span>
+                        <span class="more">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- //buttonakan -->
+            <div class="btn">
+                <button id="thum-upload-btn" onclick="document.getElementById('thum-upload-input').click()">Upload Your
+                    Thumbnail</button>
+                <input type="file" id="thum-upload-input" style="display:none">
+
+                <button id="logo-upload-btn" onclick="document.getElementById('log-upload-input').click()">Choose
+                    Logo</button>
+                <input type="file" id="log-upload-input" style="display: none;">
+                <button id="download-btn">Download</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'youtube-medium';
+    src: url('fonts/youtube-sans-medium.ttf');
+}
+
+@font-face {
+    font-family: 'NoyhGeometricBlack';
+    src: url('fonts/NoyhGeometricBlack.otf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'youtube-medium';
+    font-weight: normal;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+input {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #0B0126;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem;
+}
+
+.title {
+    color: #fff;
+    font-size: 5rem;
+    font-family: 'NoyhGeometricBlack';
+}
+
+
+.thum-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.thum {
+    width: 770px;
+    height: 550px;
+    background: #0F0F0F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem;
+    border-radius: .2vmax;
+    gap: .8rem;
+}
+
+#big-image {
+    width: 45rem;
+    aspect-ratio: 16/9;
+}
+
+.video-title {
+    align-self: flex-start;
+    font-size: 1.3rem;
+    color: #fff;
+
+}
+
+.text {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+#channel-logo {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.nameandsub {
+    display: flex;
+    flex-direction: column;
+    width: 7rem;
+}
+
+.channel-name {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.channel-sub {
+    color: #fff;
+}
+
+.sub-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .3rem;
+    font-size: .8rem;
+    background: #202020;
+    color: #fff;
+    border-radius: 15vmax;
+    padding: 0 .6rem;
+}
+
+.sub-area>h2 {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.like-area,
+.share-area,
+.clip-area,
+.save-area,
+.more {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .1rem;
+    background: #202020;
+    color: #fff;
+    border-radius: 10vmax;
+    padding: 0 .6rem;
+    height: 1.8rem;
+}
+
+.like-area {
+    width: 6rem;
+    display: flex;
+    justify-content: space-around;
+    gap: .3rem;
+}
+
+.like-area>input {
+    width: 2rem;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.like-area>hr {
+    width: 2px;
+    height: 60%;
+    background: #fff;
+}
+
+.right img {
+    width: .85rem;
+}
+
+.right p {
+    font-size: .85rem;
+}
+
+.more {
+    justify-content: center;
+}
+
+/* //////////////////////////// */
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+#logo-upload-btn,
+#thum-upload-btn,
+#download-btn {
+    width: 13rem;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 2vmax;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+
+#logo-upload-btn,
+#thum-upload-btn {
+    background: #199aa6;
+}
+
+#logo-upload-btn:hover,
+#thum-upload-btn:hover {
+    background: #045b63;
+}
+
+#download-btn {
+    background: #EF4136;
+}
+
+#download-btn:hover {
+    background: #971a11;
+}
