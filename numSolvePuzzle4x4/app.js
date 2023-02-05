@@ -16,7 +16,9 @@ let randNumArr = []
 let btnId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 let startBtn = document.getElementById('startBtn')
 let h2Title = document.getElementById('title')
-h2Title.innerHTML = 'دەست بکە بە ڕێکخستن😁'
+h2Title.innerHTML = '😁 دەست بکە بە ڕێکخستن'
+
+let j = 0
 
 
 window.onload = (genInsideBtn())
@@ -79,7 +81,7 @@ function findEmpty() {
         let a = document.getElementById(`btn${i}`)
         if (a.innerHTML === '') {
             aEmpty = i
-            console.log(aEmpty)
+            // console.log(aEmpty)
             break
         }
     }
@@ -105,32 +107,46 @@ function give(n) {
 function youWin() {
     for (let i = 1; i <= 16; i++) {
         let tempValue = document.getElementById(`btn${i}`)
-        tempValue = parseInt(tempValue.innerHTML)
-        usersorte.push(tempValue)
+        usersorte.push(parseInt(tempValue.innerHTML))
     }
-    let j = 0
+    // console.log(usersorte)
+
     for (let i = 0; i < 16; i++) {
-        if (sorted[i] === usersorte[i])
-            j += 1
-        // console.log(usersorte.sort())
+        if (sorted[i] === usersorte[i]) {
+            j = usersorte[i]
+        } else {
+            makeArrayEmpty(usersorte)
+        }
     }
+    // console.log(j)
+
     if (j === 15) {
         h2Title.innerHTML = '😎 ئافەرم شێرە'
         console.log("win")
-
+        disableBtns(true)
         j = 0
     }
-    console.log('j :' + j)
-
 }
 
 function reset() {
-    for (let i = 0; i < 16; i++) {
-        randNumArr.pop()
-        usersorte.pop()
-    }
-
+    makeArrayEmpty(randNumArr)
+    makeArrayEmpty(usersorte)
+    disableBtns(false)
     con.innerHTML = ''
     h2Title.innerHTML = '😁 دەست بکە بە ڕێکخستن'
+}
 
+function makeArrayEmpty(Array) {
+    Array.length = 0;
+}
+
+function disableBtns(isTrue) {
+    for (let i = 1; i <= sorted.length; i++) {
+        let a = document.getElementById(`btn${i}`)
+        if (isTrue === true) {
+            a.disabled = true
+        } else if (isTrue === false) {
+            a.disabled = false
+        }
+    }
 }
