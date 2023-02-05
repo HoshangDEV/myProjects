@@ -1,10 +1,11 @@
 let con = document.getElementById('con')
 let XYposition = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+    [13,14,15,16]
 ];
-let sorted = [1, 2, 3, 4, 5, 6, 7, 8, NaN]
+let sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,12,13,14,15, NaN]
 let usersorte = []
 let btn1 = ''
 let btn2 = ''
@@ -12,10 +13,10 @@ let tempNum = 0
 let tempData = ''
 let aEmpty = 0
 let randNumArr = []
-let btnId = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let btnId = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16]
 let startBtn = document.getElementById('startBtn')
 let h2Title = document.getElementById('title')
-h2Title.innerHTML = 'دەست بکە بە ڕێکسخستن😁'
+h2Title.innerHTML = 'دەست بکە بە ڕێکخستن😁'
 
 
 window.onload = (genInsideBtn())
@@ -25,8 +26,8 @@ startBtn.addEventListener('click', function () {
 })
 
 function genRandNum() {
-    while (randNumArr.length < 9) {
-        let tempNum = Math.floor(1 + Math.random() * 9)
+    while (randNumArr.length < 16) {
+        let tempNum = Math.floor(1 + Math.random() * 16)
         if (!randNumArr.includes(tempNum)) {
             randNumArr.push(tempNum)
         }
@@ -36,8 +37,8 @@ function genRandNum() {
 //generate value inside btn
 function genInsideBtn() {
     genRandNum()
-    for (let i = 0; i < 9; i++) {
-        if (randNumArr[i] === 9) {
+    for (let i = 0; i < 16; i++) {
+        if (randNumArr[i] === 16) {
             con.innerHTML += `<button id=btn${btnId[i]} onclick="give(${btnId[i]})"></button>`
             tempEmptyId = btnId[i]
         } else {
@@ -74,7 +75,7 @@ function isAround(XYposition, aEmpty, aBtn) {
 
 
 function findEmpty() {
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 16; i++) {
         let a = document.getElementById(`btn${i}`)
         if (a.innerHTML === '') {
             aEmpty = i
@@ -98,6 +99,7 @@ function give(n) {
         btn1.innerHTML = btn2.innerHTML
         btn2.innerHTML = tempData
     }
+    youWin()
 }
 
 function youWin() {
@@ -107,26 +109,28 @@ function youWin() {
         usersorte.push(tempValue)
     }
     let j = 0
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 16; i++) {
         if (sorted[i] === usersorte[i])
             j += 1
         // console.log(usersorte.sort())
     }
     if (j === 8) {
         h2Title.innerHTML = '😎 ئافەرم شێرە'
+        console.log("win")
 
         j = 0
     }
+    console.log('j :' + j)
+
 }
-youWin()
 
 function reset() {
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 16; i++) {
         randNumArr.pop()
         usersorte.pop()
     }
 
     con.innerHTML = ''
-    h2Title.innerHTML = '😁 دەست بکە بە ڕێکسخستن'
+    h2Title.innerHTML = '😁 دەست بکە بە ڕێکخستن'
 
 }
