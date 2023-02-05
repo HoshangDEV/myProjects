@@ -3,9 +3,9 @@ let XYposition = [
     [1, 2, 3, 4],
     [5, 6, 7, 8],
     [9, 10, 11, 12],
-    [13,14,15,16]
+    [13, 14, 15, 16]
 ];
-let sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,12,13,14,15, NaN]
+let sorted = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, NaN]
 let usersorte = []
 let btn1 = ''
 let btn2 = ''
@@ -13,7 +13,7 @@ let tempNum = 0
 let tempData = ''
 let aEmpty = 0
 let randNumArr = []
-let btnId = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16]
+let btnId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 let startBtn = document.getElementById('startBtn')
 let h2Title = document.getElementById('title')
 h2Title.innerHTML = 'دەست بکە بە ڕێکخستن😁'
