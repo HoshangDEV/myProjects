@@ -46,7 +46,7 @@ function genInsideBtn() {
     }
 }
 
-// genInsideBtn()
+// check if clicked btn is around empty btn
 function isAround(XYposition, aEmpty, aBtn) {
     for (let i = 0; i < XYposition.length; i++) {
         let row = XYposition[i];
