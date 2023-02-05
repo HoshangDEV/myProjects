@@ -47,7 +47,7 @@ function genInsideBtn() {
     }
 }
 
-// genInsideBtn()
+// check if clicked btn is around empty btn
 function isAround(XYposition, aEmpty, aBtn) {
     for (let i = 0; i < XYposition.length; i++) {
         let row = XYposition[i];
@@ -103,7 +103,7 @@ function give(n) {
 }
 
 function youWin() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i <= 16; i++) {
         let tempValue = document.getElementById(`btn${i}`)
         tempValue = parseInt(tempValue.innerHTML)
         usersorte.push(tempValue)
@@ -114,7 +114,7 @@ function youWin() {
             j += 1
         // console.log(usersorte.sort())
     }
-    if (j === 8) {
+    if (j === 15) {
         h2Title.innerHTML = '😎 ئافەرم شێرە'
         console.log("win")
 
