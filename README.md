@@ -1,3 +1,3 @@
 # myProjects
-# Check them out:
-# https://hoshang.netlify.app/
+Check them out:
+https://hoshang.netlify.app/
