@@ -10,7 +10,7 @@ function fetchDislikeData() {
       dataType: "json",
       success: function (data) {
         var resultDiv = document.getElementById("result");
-        var html = "<h2>Dislike Data</h2>";
+        var html = "<h2>Video Data</h2>";
         html += "<p><strong>ID:</strong> " + data.id + "</p>";
         html += "<p><strong>Likes:</strong> " + data.likes + "</p>";
         html += "<p><strong>Dislikes:</strong> " + data.dislikes + "</p>";
