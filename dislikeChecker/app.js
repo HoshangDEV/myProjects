@@ -12,12 +12,11 @@ function fetchDislikeData() {
         var resultDiv = document.getElementById("result");
         var html = "<h2>Dislike Data</h2>";
         html += "<p><strong>ID:</strong> " + data.id + "</p>";
-        html +=
-          "<p><strong>Date Created:</strong> " + data.dateCreated + "</p>";
         html += "<p><strong>Likes:</strong> " + data.likes + "</p>";
         html += "<p><strong>Dislikes:</strong> " + data.dislikes + "</p>";
-        html += "<p><strong>Rating:</strong> " + data.rating + "</p>";
         html += "<p><strong>View Count:</strong> " + data.viewCount + "</p>";
+        html += "<p><strong>Date Created:</strong> " + data.dateCreated + "</p>";
+        html += "<p><strong>Rating:</strong> " + data.rating + "</p>";
 
         resultDiv.innerHTML = html;
       },
