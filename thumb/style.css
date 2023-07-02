@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'youtube-medium';
-    src: url('fonts/youtube-sans-medium.ttf');
+    src: url('../fonts/youtube-sans-medium.ttf');
 }
 
 @font-face {
     font-family: 'NoyhGeometricBlack';
-    src: url('fonts/NoyhGeometricBlack.otf');
+    src: url('../fonts/NoyhGeometricBlack.otf');
 }
 
 * {
