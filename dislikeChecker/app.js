@@ -1,50 +1,81 @@
+let type = "";
+
+function extractYouTubeID(link) {
+  let id;
+
+  if (link.includes("youtu.be/")) {
+    id = link.split("youtu.be/")[1];
+    type = "Youtube Video";
+  } else if (link.includes("youtube.com/watch")) {
+    const searchParams = new URLSearchParams(new URL(link).search);
+    id = searchParams.get("v");
+    type = "Youtube Video";
+  } else if (link.includes("youtube.com/shorts/")) {
+    id = link.split("youtube.com/shorts/")[1].split("?")[0];
+    type = "Youtube Shorts";
+  } else {
+    id = "empty";
+  }
+
+  return id;
+}
+
 function fetchDislikeData() {
-  var videoLink = document.getElementById("videoLink").value;
-  var videoId = extractVideoId(videoLink);
+  let noresult = document.getElementById("noresult");
+  let videoLink = document.getElementById("videoLink").value;
+  const apiUrl = `https://returnyoutubedislikeapi.com/votes?videoId=${extractYouTubeID(
+    videoLink,
+    type
+  )}`;
+  if (!apiUrl.includes("empty")) {
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        noresult.textContent = "";
+        const videoType = document.getElementById("videoType");
+        videoType.textContent = type;
 
-  if (videoId) {
-    var url = "https://returnyoutubedislikeapi.com/votes?videoId=" + videoId;
+        const videoIdElement = document.getElementById("videoId");
+        videoIdElement.textContent = data.id;
 
-    $.ajax({
-      url: url,
-      dataType: "json",
-      success: function (data) {
-        var resultDiv = document.getElementById("result");
-        var html = "<h2>Video Data</h2>";
-        html += "<p><strong>ID:</strong> " + data.id + "</p>";
-        html += "<p><strong>Likes:</strong> " + data.likes + "</p>";
-        html += "<p><strong>Dislikes:</strong> " + data.dislikes + "</p>";
-        html += "<p><strong>View Count:</strong> " + data.viewCount + "</p>";
-        html += "<p><strong>Date Created:</strong> " + data.dateCreated + "</p>";
-        html += "<p><strong>Rating:</strong> " + data.rating + "</p>";
+        const likesElement = document.getElementById("likes");
+        likesElement.textContent = formatNumber(data.likes);
 
-        resultDiv.innerHTML = html;
-      },
-      error: function () {
-        var resultDiv = document.getElementById("result");
-        resultDiv.innerHTML =
-          "<p>Error retrieving dislike data. Please try again later.</p>";
-      },
-    });
+        const dislikesElement = document.getElementById("dislikes");
+        dislikesElement.textContent = formatNumber(data.dislikes);
+
+        const ratingElement = document.getElementById("rating");
+        ratingElement.textContent = data.rating.toFixed(2);
+
+        const viewCountElement = document.getElementById("viewCount");
+        viewCountElement.textContent = formatNumber(data.viewCount);
+
+        const dateCreatedElement = document.getElementById("dateCreated");
+        dateCreatedElement.textContent = formatDate(data.dateCreated);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   } else {
-    var resultDiv = document.getElementById("result");
-    resultDiv.innerHTML =
-      "<p>Invalid YouTube video link. Please enter a valid link.</p>";
+    noresult.textContent = "wrong input";
   }
 }
 
-function extractVideoId(url) {
-  var videoId = null;
-  var match = url.match(/youtu\.be\/([^?]+)/i);
+function formatNumber(number) {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-  if (match && match[1]) {
-    videoId = match[1];
-  } else {
-    match = url.match(/youtube\.com\/watch\?v=([^&]+)/i);
-    if (match && match[1]) {
-      videoId = match[1];
+function formatDate(date) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(date).toLocaleDateString(undefined, options);
+}
+
+// Add event listener for Enter key press
+document
+  .getElementById("videoLink")
+  .addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      fetchDislikeData();
     }
-  }
-
-  return videoId;
-}
+  });

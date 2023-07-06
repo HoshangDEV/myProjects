@@ -3,18 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>YouTube Dislike Checker</title>
+    <title>YouTube Dislike API Demo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/bb4a55a437.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>YouTube Dislike Checker</h1>
-
-    <label for="videoLink">Enter YouTube Video Link:</label>
-    <input type="text" id="videoLink" />
-    <button onclick="fetchDislikeData()">Get Video Data</button>
-
-    <div id="result"></div>
+    <h1>YouTube Dislike API Demo</h1>
+    <div>
+      <input type="text" id="videoLink"class="input" placeholder="Enter the URL" 
+      />
+      <button onclick="fetchDislikeData()" class="button-29" role="button">
+        Get Video Data
+      </button>
+    </div>
+    <p id="noresult" style="color: red"></p>
+    <table id="resultTable" class="table-fill">
+      <thead class="table-fill">
+        <tr>
+          <th class="text-left">Data Type</th>
+          <th class="text-left">Data Value</th>
+        </tr>
+      </thead>
+      <tbody class="table-hover">
+        <tr>
+          <td class="text-left">
+            <i class="fa-brands fa-youtube"></i> Video Type
+          </td>
+          <td class="text-left" id="videoType"></td>
+        </tr>
+        <tr>
+          <td class="text-left"><i class="fa-solid fa-at"></i> Video ID</td>
+          <td class="text-left" id="videoId"></td>
+        </tr>
+        <tr>
+          <td class="text-left"><i class="fa-solid fa-thumbs-up"></i> Likes</td>
+          <td class="text-left" id="likes"></td>
+        </tr>
+        <tr>
+          <td class="text-left">
+            <i class="fa-solid fa-thumbs-down"></i> Dislikes
+          </td>
+          <td class="text-left" id="dislikes"></td>
+        </tr>
+        <tr>
+          <td class="text-left"><i class="fa-solid fa-star"></i> Rating</td>
+          <td class="text-left" id="rating"></td>
+        </tr>
+        <tr>
+          <td class="text-left"><i class="fa-solid fa-eye"></i> View Count</td>
+          <td class="text-left" id="viewCount"></td>
+        </tr>
+        <tr>
+          <td class="text-left">
+            <i class="fa-solid fa-calendar-plus"></i> Date Created
+          </td>
+          <td class="text-left" id="dateCreated"></td>
+        </tr>
+      </tbody>
+    </table>
 
     <script src="app.js"></script>
   </body>
 </html>
+
+<!-- /* CSS */ -->
