@@ -1,0 +1,17 @@
+#findReplace {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  width: fit-content;
+  padding: 1rem;
+}
+#findReplace>span{
+  display: flex ;
+  height: 2rem;
+  align-items: center;
+  gap: .3rem;
+}
+
+#findReplace>button{
+  width: fit-content;
+}

@@ -5,21 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove Extra Spaces</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Paragraph Formatter</title>
 </head>
 
 <body>
-    <h1>Remove Extra Spaces</h1>
+    <h1>Paragraph Formatter</h1>
+    <h2>Your Paragraph</h2>
     <textarea id="inputTextArea" rows="5" cols="50"></textarea>
     <br>
-    <button onclick="processInput()">Process</button>
+    <button onclick="removeExtraSpace()">Remove Extra Space</button>
+    <button onclick="removeLines()">Remove Lines</button>
     <br>
     <br>
+    <div id="findReplace">
+        <span>
+            <p>Find: </p><input type="text" id="find">
+        </span>
+        <span>
+            <p>Replace With: </p><input type="text" id="replaceWith">
+        </span>
+        <button onclick="replaceWord()">Replace All</button>
+    </div>
+    <br>
+    <br>
+    <h2>Result</h2>
     <textarea id="outputTextArea" rows="5" cols="50"></textarea>
     <br>
     <button id="copyButton" onclick="copyToClipboard()">Copy Result</button>
 
     <script src="app.js"></script>
+
 </body>
 
 </html>
