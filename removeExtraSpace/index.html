@@ -21,21 +21,20 @@
     <div id="findReplace">
         <span>
             <p>Find: </p><input type="text" id="find">
+            <p id="count"></p>
+            <button onclick="highlightWord()">Find</button>
         </span>
         <span>
             <p>Replace With: </p><input type="text" id="replaceWith">
+            <button onclick="replaceWord()">Replace All</button>
         </span>
-        <button onclick="replaceWord()">Replace All</button>
     </div>
-    <br>
-    <br>
     <h2>Result</h2>
-    <textarea id="outputTextArea" rows="5" cols="50"></textarea>
+    <p id="outputTextArea"></p>
     <br>
     <button id="copyButton" onclick="copyToClipboard()">Copy Result</button>
 
     <script src="app.js"></script>
-
 </body>
 
 </html>

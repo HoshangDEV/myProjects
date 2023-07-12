@@ -1,17 +1,27 @@
 #findReplace {
   display: flex;
   flex-direction: column;
-  border: solid 1px black;
+  border: solid 1px rgb(204, 204, 204);
   width: fit-content;
   padding: 1rem;
 }
-#findReplace>span{
-  display: flex ;
+
+#findReplace>span {
+  display: flex;
   height: 2rem;
   align-items: center;
-  gap: .3rem;
+  gap: 0.3rem;
 }
 
-#findReplace>button{
+#findReplace>button {
   width: fit-content;
+}
+
+.highlight {
+  background-color: yellow;
+}
+#outputTextArea{
+  background-color: rgb(204, 204, 204);
+  border-radius: .4vmax;
+  padding: 1rem;
 }
