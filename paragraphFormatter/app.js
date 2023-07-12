@@ -1,31 +1,33 @@
 function removeExtraSpace() {
   var input = document.getElementById("inputTextArea").value;
-  var result = input.replace(/\s+/g, " ").trim();
-  document.getElementById("outputTextArea").value = result;
+  input = input.replace(/\n/g, "<br>").replace(/\s+/g, " ").trim();
+  document.getElementById("outputTextArea").innerHTML = input;
 }
 
 function removeLines() {
   var input = document.getElementById("inputTextArea").value;
-  var result = input.replace(/\n/g, " ").trim();
-  document.getElementById("outputTextArea").value = result;
+  input = input.replace(/\n/g, " ").trim();
+  document.getElementById("outputTextArea").textContent = input;
 }
 
-function highlightWord() {
+function findWord() {
   var paragraph = document.getElementById("inputTextArea").value;
   var word = document.getElementById("find").value;
-  var highlightedParagraph = document.getElementById("outputTextArea");
+  var outputTextArea = document.getElementById("outputTextArea");
   var countElement = document.getElementById("count");
 
   var regex = new RegExp(word, "gi");
-  var highlightedText = paragraph.replace(
-    regex,
-    '<span class="highlight">$&</span>'
-  );
+  var highlightedText = paragraph
+    .replace(/\n/g, "<br>")
+    .replace(regex, '<span class="highlight">$&</span>');
 
-  highlightedParagraph.innerHTML = highlightedText;
-
-  var count = (highlightedText.match(regex) || []).length;
-  countElement.textContent = "Found " + count + " occurrence(s).";
+  if (word.length == 0) {
+    countElement.textContent = "Insert The Word";
+  } else {
+    outputTextArea.innerHTML = highlightedText;
+    var count = (highlightedText.match(regex) || []).length;
+    countElement.textContent = "Found " + count + " occurrence(s).";
+  }
 }
 
 function replaceWord() {
@@ -33,19 +35,21 @@ function replaceWord() {
   const replaceWith = document.getElementById("replaceWith").value;
   var input = document.getElementById("inputTextArea").value;
 
-  // Create a regular expression with the 'gi' flags for case-insensitive and global matching
   var regex = new RegExp(findWord, "gi");
 
-  // Use the regular expression to replace all occurrences of the word and apply highlighting
   var result = input
+    .replace(/\n/g, "<br>")
     .replace(regex, `<span class="highlight">${replaceWith}</span>`)
     .trim();
 
-  document.getElementById("outputTextArea").innerHTML = result;
+    
+    if (replaceWith.length == 0) {
+      document.getElementById("replaceError").textContent='Insert The New Word';
+    } else {
+      document.getElementById("replaceError").textContent='';
+    document.getElementById("outputTextArea").innerHTML = result;
+  }
 }
-
-
-
 
 function copyToClipboard() {
   var output = document.getElementById("outputTextArea");

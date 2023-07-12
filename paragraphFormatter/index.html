@@ -21,12 +21,13 @@
     <div id="findReplace">
         <span>
             <p>Find: </p><input type="text" id="find">
+            <button onclick="findWord()">Find</button>
             <p id="count"></p>
-            <button onclick="highlightWord()">Find</button>
         </span>
         <span>
             <p>Replace With: </p><input type="text" id="replaceWith">
             <button onclick="replaceWord()">Replace All</button>
+            <p id="replaceError"></p>
         </span>
     </div>
     <h2>Result</h2>

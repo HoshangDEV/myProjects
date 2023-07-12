@@ -16,5 +16,5 @@
 ## Tools
 
  - [YouTube Thumbnail Generator](https://hoshang.netlify.app/thumb/)
- - [Remove Extra Space](https://hoshang.netlify.app/removeExtraSpace/)
+ - [Remove Extra Space](https://hoshang.netlify.app/paragraphFormatter/)
 
