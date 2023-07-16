@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
+
+
+* {
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #1b1b1d;
+  color: white;
+  padding: 1rem;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+#dropzone {
+  width: 100%;
+  min-height: 1rem;
+  text-align: center;
+  line-height: 300px;
+  font-size: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#dropzone>span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 4rem;
+}
+
+#dropzone>span>img {
+  border: 2px dashed #ccc;
+  width: 30rem;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+/* paste btn */
+.pasteBtn {
+  background-image: linear-gradient(to right,
+      #ff6e7f 0%,
+      #bfe9ff 51%,
+      #ff6e7f 100%);
+  border: none;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+  border-radius: 10px;
+  font-size: 1rem;
+  display: block;
+}
+
+.pasteBtn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+/* download btn */
+.downloadBtn {
+  background-image: linear-gradient(to right,
+      #314755 0%,
+      #26a0da 51%,
+      #314755 100%);
+  /* width: ; */
+  height: 4rem;
+  font-size: 1rem;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 2px 2px 2px #ffffff;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+.downloadBtn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
