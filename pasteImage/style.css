@@ -1,13 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&display=swap");
 
-
 * {
   font-weight: normal;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
-
+  font-family: "Rubik", sans-serif;
 }
 
 body {
@@ -44,16 +42,18 @@ h1 {
 
 #dropzone>span {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
   gap: 4rem;
+  border: solid 1px rgba(128, 128, 128, 0.437);
+  padding: 2rem 1rem;
+  border-radius: 2vmax;
 }
 
 #dropzone>span>img {
   border: 2px dashed #ccc;
-  width: 40%;
+  width: 30%;
   aspect-ratio: 1/1;
   object-fit: contain;
   padding: 1rem;
