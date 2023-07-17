@@ -44,6 +44,7 @@ h1 {
 
 #dropzone>span {
   display: flex;
+  flex-wrap:wrap;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -52,7 +53,7 @@ h1 {
 
 #dropzone>span>img {
   border: 2px dashed #ccc;
-  width: 30rem;
+  width: 40%;
   aspect-ratio: 1/1;
   object-fit: contain;
   padding: 1rem;
