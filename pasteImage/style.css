@@ -16,6 +16,10 @@ body {
   padding: 1rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .title {
   width: 100%;
   display: flex;
@@ -40,7 +44,7 @@ h1 {
   gap: 3rem;
 }
 
-#dropzone>span {
+#dropzone > span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -49,9 +53,10 @@ h1 {
   border: solid 1px rgba(128, 128, 128, 0.437);
   padding: 2rem 1rem;
   border-radius: 2vmax;
+  position: relative;
 }
 
-#dropzone>span>img {
+#dropzone > span > img {
   border: 2px dashed #ccc;
   width: 30%;
   aspect-ratio: 1/1;
@@ -59,14 +64,21 @@ h1 {
   padding: 1rem;
 }
 
+#dropzone > span > p {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* paste btn */
 .pasteBtn {
-  background-image: linear-gradient(to right,
-      #ff6e7f 0%,
-      #bfe9ff 51%,
-      #ff6e7f 100%);
+  background-image: linear-gradient(
+    to right,
+    #ff6e7f 0%,
+    #bfe9ff 51%,
+    #ff6e7f 100%
+  );
   border: none;
-  margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -81,20 +93,20 @@ h1 {
 .pasteBtn:hover {
   background-position: right center;
   /* change the direction of the change here */
-  color: #fff;
   text-decoration: none;
 }
 
 /* download btn */
 .downloadBtn {
-  background-image: linear-gradient(to right,
-      #314755 0%,
-      #26a0da 51%,
-      #314755 100%);
+  background-image: linear-gradient(
+    to right,
+    #314755 0%,
+    #26a0da 51%,
+    #314755 100%
+  );
   /* width: ; */
   height: 4rem;
   font-size: 1rem;
-  margin: 10px;
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -112,4 +124,38 @@ h1 {
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+/* removeBtn */
+
+.removeBtn {
+  background-image: linear-gradient(
+    to right,
+    #e53935 0%,
+    #e35d5b 51%,
+    #e53935 100%
+  );
+  height: 4rem;
+  border: none;
+  font-size: 1rem;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 2px 2px 2px #ffffff;
+  border-radius: 10px;
+  display: block;
+}
+
+.removeBtn:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.removeBtn > i {
+  /* font-size: 2rem; */
+  color: white;
 }
